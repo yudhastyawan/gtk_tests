@@ -36,8 +36,11 @@ static gboolean on_draw_event(GtkWidget *widget, cairo_t *cr, gpointer user_data
 
 static gboolean clicked(GtkWidget *widget, GdkEventButton *event, gpointer user_data) {
     if (event->button == 1) {
+        printf("%d\n", glob.count);
         glob.coordx[glob.count] = event->x;
         glob.coordy[glob.count++] = event->y;
+        printf("%d\n", glob.count);
+        printf("%f-%f\n",event->x,event->y);
     }
 
     if (event->button == 3) {
